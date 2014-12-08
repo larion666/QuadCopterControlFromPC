@@ -27,21 +27,7 @@ namespace QuadcopterControlSerialPort
          protected override void OnKeyDown(KeyEventArgs e)
         {
              base.OnKeyDown(e);
-             switch(e.KeyCode)
-             {
-                 case Keys.Down:
-                      SendASCIItoSerialPort(40);
-                 break;
-                 case Keys.Up:
-                      SendASCIItoSerialPort(38);
-                 break;
-                 case Keys.Left:
-                      SendASCIItoSerialPort(37);
-                 break;
-                 case Keys.Right:
-                      SendASCIItoSerialPort(39);
-                 break;
-             }
+             SendASCIItoSerialPort(e.KeyValue);
         }
         void ChangeText ()
         {
